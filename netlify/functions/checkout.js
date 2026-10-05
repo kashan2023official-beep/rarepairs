@@ -1,6 +1,6 @@
-const { createClient } = require('@supabase/supabase-js');
-const { z } = require('zod');
-const { Resend } = require('resend');
+import { createClient } from '@supabase/supabase-js';
+import { z } from 'zod';
+import { Resend } from 'resend';
 
 const supabase = createClient(
   process.env.VITE_SUPABASE_URL,
@@ -18,7 +18,7 @@ const checkoutSchema = z.object({
   notes: z.string().optional(),
 });
 
-exports.handler = async (event) => {
+export const handler = async (event) => {
   if (event.httpMethod !== 'POST') {
     return { statusCode: 405, body: 'Method Not Allowed' };
   }
