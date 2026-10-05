@@ -51,7 +51,7 @@ function FaqItem({ q, a }) {
   const [isOpen, setIsOpen] = useState(false);
   
   return (
-    <div className="rounded-2xl border border-navy/10 dark:border-cream/10 overflow-hidden bg-white/50 dark:bg-navy-card/50 backdrop-blur-sm transition-colors">
+    <div className="rounded-2xl border border-navy/10 dark:border-cream/10 overflow-hidden bg-cream/50 dark:bg-navy-card/50 backdrop-blur-sm transition-colors">
       <button 
         className="w-full px-5 py-5 text-left flex justify-between items-center focus:outline-none hover:bg-navy/[0.02] dark:hover:bg-cream/[0.02] transition-colors"
         onClick={() => setIsOpen(!isOpen)}
@@ -114,19 +114,19 @@ export default function HowItWorks() {
           
           {/* Trust Badges */}
           <div className="flex flex-wrap justify-center gap-3 mt-10 max-w-3xl mx-auto">
-            <div className="flex items-center justify-center gap-2 bg-white/50 dark:bg-navy-card/50 backdrop-blur-sm border border-navy/10 dark:border-cream/10 px-4 py-2 rounded-xl md:rounded-full">
+            <div className="flex items-center justify-center gap-2 bg-cream/50 dark:bg-navy-card/50 backdrop-blur-sm border border-navy/10 dark:border-cream/10 px-4 py-2 rounded-xl md:rounded-full">
               <ShieldCheck className="w-4 h-4" />
               <span className="text-xs font-medium">12-point authentication</span>
             </div>
-            <div className="flex items-center justify-center gap-2 bg-white/50 dark:bg-navy-card/50 backdrop-blur-sm border border-navy/10 dark:border-cream/10 px-4 py-2 rounded-xl md:rounded-full">
+            <div className="flex items-center justify-center gap-2 bg-cream/50 dark:bg-navy-card/50 backdrop-blur-sm border border-navy/10 dark:border-cream/10 px-4 py-2 rounded-xl md:rounded-full">
               <BadgeCheck className="w-4 h-4" />
               <span className="text-xs font-medium">Authenticity card included</span>
             </div>
-            <div className="flex items-center justify-center gap-2 bg-white/50 dark:bg-navy-card/50 backdrop-blur-sm border border-navy/10 dark:border-cream/10 px-4 py-2 rounded-xl md:rounded-full">
+            <div className="flex items-center justify-center gap-2 bg-cream/50 dark:bg-navy-card/50 backdrop-blur-sm border border-navy/10 dark:border-cream/10 px-4 py-2 rounded-xl md:rounded-full">
               <Truck className="w-4 h-4" />
               <span className="text-xs font-medium">Free shipping over Rs 15,000</span>
             </div>
-            <div className="flex items-center justify-center gap-2 bg-white/50 dark:bg-navy-card/50 backdrop-blur-sm border border-navy/10 dark:border-cream/10 px-4 py-2 rounded-xl md:rounded-full">
+            <div className="flex items-center justify-center gap-2 bg-cream/50 dark:bg-navy-card/50 backdrop-blur-sm border border-navy/10 dark:border-cream/10 px-4 py-2 rounded-xl md:rounded-full">
               <MessageCircle className="w-4 h-4" />
               <span className="text-xs font-medium">2-hour WhatsApp reply</span>
             </div>
@@ -209,7 +209,7 @@ export default function HowItWorks() {
                     
                     {/* Content Box */}
                     <div className={`ml-16 md:ml-0 md:w-[45%] ${idx % 2 === 0 ? 'md:pl-0' : 'md:pr-0'}`}>
-                      <div className="rounded-2xl border border-navy/10 dark:border-cream/10 bg-white/50 dark:bg-navy-card/50 p-6 backdrop-blur-sm shadow-sm transition-shadow">
+                      <div className="rounded-2xl border border-navy/10 dark:border-cream/10 bg-cream/50 dark:bg-navy-card/50 p-6 backdrop-blur-sm shadow-sm transition-shadow">
                         <span className="block text-xs font-bold tracking-widest text-navy/40 dark:text-cream/40 mb-3">
                           STEP 0{idx + 1}
                         </span>
@@ -240,7 +240,7 @@ export default function HowItWorks() {
             className={`mt-16 transition-all duration-700 ease-out ${isDelivInView ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-6'}`}
           >
             {/* Desktop Table */}
-            <div className="hidden md:block rounded-2xl border border-navy/10 dark:border-cream/10 overflow-hidden mb-12 shadow-sm bg-white/50 dark:bg-navy-card/50 backdrop-blur-sm">
+            <div className="hidden md:block rounded-2xl border border-navy/10 dark:border-cream/10 overflow-hidden mb-12 shadow-sm bg-cream/50 dark:bg-navy-card/50 backdrop-blur-sm">
               <table className="w-full text-left border-collapse">
                 <thead className="bg-navy/5 dark:bg-cream/5">
                   <tr>
@@ -273,7 +273,7 @@ export default function HowItWorks() {
 
             {/* Mobile Cards */}
             <div className="md:hidden space-y-4 mb-10">
-              <div className="rounded-2xl border border-navy/10 dark:border-cream/10 p-5 bg-white/50 dark:bg-navy-card/50 backdrop-blur-sm">
+              <div className="rounded-2xl border border-navy/10 dark:border-cream/10 p-5 bg-cream/50 dark:bg-navy-card/50 backdrop-blur-sm">
                 <h4 className="font-bold mb-2">Major Cities</h4>
                 <p className="text-sm text-navy/60 dark:text-cream/60 mb-1 leading-relaxed">Karachi, Lahore, Islamabad, Rawalpindi, Faisalabad, Multan, Peshawar</p>
                 <div className="flex justify-between items-center mt-4 pt-4 border-t border-navy/5 dark:border-cream/5">
@@ -290,7 +290,7 @@ export default function HowItWorks() {
                 </div>
               </div>
 
-              <div className="rounded-2xl border border-navy/10 dark:border-cream/10 p-5 bg-white/50 dark:bg-navy-card/50 backdrop-blur-sm">
+              <div className="rounded-2xl border border-navy/10 dark:border-cream/10 p-5 bg-cream/50 dark:bg-navy-card/50 backdrop-blur-sm">
                 <h4 className="font-bold mb-2">Orders over Rs 15,000</h4>
                 <div className="flex justify-between items-center mt-4 pt-4 border-t border-navy/5 dark:border-cream/5">
                   <span className="text-navy/80 dark:text-cream/80 text-sm">2–5 business days</span>
@@ -364,7 +364,7 @@ export default function HowItWorks() {
             </div>
 
             {/* Example Card */}
-            <div className="w-full md:w-[320px] flex-shrink-0 rounded-2xl border border-navy/10 dark:border-cream/10 bg-white/50 dark:bg-navy-card/50 p-6 backdrop-blur-sm mt-0 md:mt-24">
+            <div className="w-full md:w-[320px] flex-shrink-0 rounded-2xl border border-navy/10 dark:border-cream/10 bg-cream/50 dark:bg-navy-card/50 p-6 backdrop-blur-sm mt-0 md:mt-24">
               <div className="uppercase tracking-widest text-xs font-bold text-navy/50 dark:text-cream/50 mb-6">
                 EXAMPLE
               </div>
@@ -393,7 +393,7 @@ export default function HowItWorks() {
             <p className="font-semibold mb-6">Online Payment (Optional)</p>
             <div className="flex flex-wrap justify-center gap-3 mb-6">
               {['Easypaisa', 'JazzCash', 'Meezan', 'HBL', 'UBL', 'SadaPay'].map((method) => (
-                <div key={method} className="rounded-full border border-navy/10 dark:border-cream/10 px-4 py-2 text-sm bg-white/30 dark:bg-navy-card/30 backdrop-blur-sm">
+                <div key={method} className="rounded-full border border-navy/10 dark:border-cream/10 px-4 py-2 text-sm bg-cream/30 dark:bg-navy-card/30 backdrop-blur-sm">
                   {method}
                 </div>
               ))}

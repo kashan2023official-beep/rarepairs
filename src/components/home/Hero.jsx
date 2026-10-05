@@ -3,7 +3,7 @@ import { ArrowRight } from 'lucide-react';
 // Pure CSS Mesh Gradients
 // Light mode: cream base #F4F1EA with three layered radial-gradient glows
 const LIGHT_MESH_GRADIENT = [
-  'radial-gradient(circle at 20% 20%, #FFFFFF 0%, rgba(255, 255, 255, 0) 55%)',
+  'radial-gradient(circle at 20% 20%, #F4F1EA 0%, rgba(244, 241, 234, 0) 55%)',
   'radial-gradient(circle at 80% 30%, #EBE7DE 0%, rgba(235, 231, 222, 0) 55%)',
   'radial-gradient(circle at 40% 80%, #F0E9D9 0%, rgba(240, 233, 217, 0) 55%)',
 ].join(', ');

@@ -120,7 +120,7 @@ export default function CheckoutModal({ isOpen, onClose, product }) {
             </div>
           ) : (
             <>
-              <div className="flex gap-4 p-4 mb-6 bg-white dark:bg-navy rounded-xl border border-navy/5 dark:border-cream/5">
+              <div className="flex gap-4 p-4 mb-6 bg-cream dark:bg-navy rounded-xl border border-navy/5 dark:border-cream/5">
                 <img src={product.images[0]} alt={product.name} className="w-16 h-16 rounded object-contain bg-cream/50"  loading="lazy" decoding="async"/>
                 <div>
                   <h4 className="font-semibold text-navy dark:text-cream text-sm">{product.name}</h4>

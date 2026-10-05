@@ -43,7 +43,7 @@ export default function Login() {
       </div>
 
       <div className="mt-8 sm:mx-auto sm:w-full sm:max-w-md">
-        <div className="bg-white dark:bg-navy-card py-8 px-4 shadow sm:rounded-2xl sm:px-10 border border-navy/5 dark:border-cream/5 mx-4 sm:mx-0">
+        <div className="bg-cream dark:bg-navy-card py-8 px-4 shadow sm:rounded-2xl sm:px-10 border border-navy/5 dark:border-cream/5 mx-4 sm:mx-0">
           <form className="space-y-6" onSubmit={handleSubmit(onSubmit)}>
             {authError && (
               <div className="p-3 bg-sold/10 dark:bg-sold-dark/10 border border-sold/20 dark:border-sold-dark/20 rounded text-sold dark:text-sold-dark text-sm text-center">

@@ -108,13 +108,13 @@ export default function ProductForm() {
       <form onSubmit={handleSubmit(onSubmit)} className="space-y-8">
         
         {/* Images */}
-        <div className="bg-white dark:bg-navy-card p-6 rounded-xl border border-navy/10 dark:border-cream/10">
+        <div className="bg-cream dark:bg-navy-card p-6 rounded-xl border border-navy/10 dark:border-cream/10">
           <h2 className="text-lg font-bold text-navy dark:text-cream mb-4">Images</h2>
           <ImageUpload images={images} onChange={setImages} onUpload={uploadImage} />
         </div>
 
         {/* Basic Info */}
-        <div className="bg-white dark:bg-navy-card p-6 rounded-xl border border-navy/10 dark:border-cream/10 grid grid-cols-1 md:grid-cols-2 gap-6">
+        <div className="bg-cream dark:bg-navy-card p-6 rounded-xl border border-navy/10 dark:border-cream/10 grid grid-cols-1 md:grid-cols-2 gap-6">
           <div className="md:col-span-2">
             <label className="block text-xs font-bold uppercase text-navy/70 dark:text-cream/70 mb-2">Name *</label>
             <input {...register('name', { required: true })} className="w-full bg-transparent border border-navy/20 dark:border-cream/20 rounded-lg px-4 py-3 min-h-[44px] text-navy dark:text-cream focus:ring-1 focus:ring-navy dark:focus:ring-cream outline-none" />
@@ -137,7 +137,7 @@ export default function ProductForm() {
         </div>
 
         {/* Pricing & Status */}
-        <div className="bg-white dark:bg-navy-card p-6 rounded-xl border border-navy/10 dark:border-cream/10 grid grid-cols-1 md:grid-cols-2 gap-6">
+        <div className="bg-cream dark:bg-navy-card p-6 rounded-xl border border-navy/10 dark:border-cream/10 grid grid-cols-1 md:grid-cols-2 gap-6">
           <div>
             <label className="block text-xs font-bold uppercase text-navy/70 dark:text-cream/70 mb-2">Price (Rs) *</label>
             <input type="number" {...register('price', { required: true })} className="w-full bg-transparent border border-navy/20 dark:border-cream/20 rounded-lg px-4 py-3 min-h-[44px] text-navy dark:text-cream focus:ring-1 focus:ring-navy dark:focus:ring-cream outline-none" />
@@ -163,7 +163,7 @@ export default function ProductForm() {
         </div>
 
         {/* Details */}
-        <div className="bg-white dark:bg-navy-card p-6 rounded-xl border border-navy/10 dark:border-cream/10 grid grid-cols-1 md:grid-cols-3 gap-6">
+        <div className="bg-cream dark:bg-navy-card p-6 rounded-xl border border-navy/10 dark:border-cream/10 grid grid-cols-1 md:grid-cols-3 gap-6">
           <div>
             <label className="block text-xs font-bold uppercase text-navy/70 dark:text-cream/70 mb-2">Size UK *</label>
             <input {...register('size_uk', { required: true })} className="w-full bg-transparent border border-navy/20 dark:border-cream/20 rounded-lg px-4 py-3 min-h-[44px] text-navy dark:text-cream focus:ring-1 focus:ring-navy dark:focus:ring-cream outline-none" />
@@ -220,7 +220,7 @@ export default function ProductForm() {
           <button 
             type="submit" 
             disabled={saving}
-            className="w-full md:w-auto px-12 py-3 min-h-[44px] rounded-full font-bold bg-available text-white hover:bg-available/90 transition-colors disabled:opacity-50 flex items-center justify-center gap-2"
+            className="w-full md:w-auto px-12 py-3 min-h-[44px] rounded-full font-bold bg-available text-cream hover:bg-available/90 transition-colors disabled:opacity-50 flex items-center justify-center gap-2"
           >
             {saving ? <Loader2 className="w-5 h-5 animate-spin" /> : (isEdit ? 'Save Changes' : 'Create Product')}
           </button>

@@ -44,7 +44,7 @@ export default function Orders() {
         <h1 className="font-display text-3xl font-bold text-navy dark:text-cream">Orders</h1>
       </div>
 
-      <div className="bg-white dark:bg-navy-card rounded-xl border border-navy/10 dark:border-cream/10 overflow-hidden">
+      <div className="bg-cream dark:bg-navy-card rounded-xl border border-navy/10 dark:border-cream/10 overflow-hidden">
         <div className="hidden md:grid grid-cols-6 gap-4 p-4 bg-navy/5 dark:bg-cream/5 border-b border-navy/10 dark:border-cream/10 text-xs font-bold uppercase tracking-wider text-navy/70 dark:text-cream/70">
           <div>Date</div>
           <div className="col-span-2">Customer & Product</div>
@@ -138,7 +138,7 @@ export default function Orders() {
                     <a 
                       href={`https://wa.me/${order.customer_phone.replace(/\D/g, '')}?text=${formatWhatsAppMessage(order)}`}
                       target="_blank" rel="noreferrer"
-                      className="inline-flex items-center justify-center gap-2 w-full md:w-auto px-6 min-h-[44px] rounded-full font-bold bg-[#25D366] text-white hover:bg-[#128C7E] transition-colors"
+                      className="inline-flex items-center justify-center gap-2 w-full md:w-auto px-6 min-h-[44px] rounded-full font-bold bg-[#25D366] text-cream hover:bg-[#128C7E] transition-colors"
                     >
                       <MessageCircle className="w-4 h-4" /> Open in WhatsApp
                     </a>

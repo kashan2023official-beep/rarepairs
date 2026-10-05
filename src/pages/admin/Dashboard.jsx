@@ -88,7 +88,7 @@ export default function Dashboard() {
       ) : (
         <>
           {/* Desktop Table */}
-          <div className="hidden md:block bg-white dark:bg-navy-card rounded-xl border border-navy/10 dark:border-cream/10 overflow-hidden">
+          <div className="hidden md:block bg-cream dark:bg-navy-card rounded-xl border border-navy/10 dark:border-cream/10 overflow-hidden">
             <table className="w-full text-left border-collapse">
               <thead>
                 <tr className="bg-navy/5 dark:bg-cream/5 border-b border-navy/10 dark:border-cream/10">
@@ -145,7 +145,7 @@ export default function Dashboard() {
           {/* Mobile Cards */}
           <div className="grid grid-cols-1 gap-4 md:hidden">
             {filteredProducts?.map(p => (
-              <div key={p.id} className="bg-white dark:bg-navy-card p-4 rounded-xl border border-navy/10 dark:border-cream/10 flex gap-4">
+              <div key={p.id} className="bg-cream dark:bg-navy-card p-4 rounded-xl border border-navy/10 dark:border-cream/10 flex gap-4">
                 <img src={p.images?.[0] || 'https://placehold.co/100'} alt={p.name} className="w-20 h-20 rounded-lg object-contain bg-cream/50 dark:bg-navy/50"  loading="lazy" decoding="async"/>
                 <div className="flex-1 min-w-0">
                   <h3 className="font-semibold text-navy dark:text-cream truncate">{p.name}</h3>

@@ -50,20 +50,20 @@ export default function ImageUpload({ images, onChange, onUpload }) {
             <img src={url} alt={`Preview ${i}`} className="w-full h-full object-contain"  loading="lazy" decoding="async"/>
             <div className="absolute top-2 right-2 flex gap-1 md:opacity-0 md:group-hover:opacity-100 transition-opacity">
               {i > 0 && (
-                <button type="button" onClick={() => moveImage(i, -1)} className="p-1.5 bg-black/50 rounded-md text-white hover:bg-black/80 min-h-[44px] min-w-[44px] flex items-center justify-center">
+                <button type="button" onClick={() => moveImage(i, -1)} className="p-1.5 bg-black/50 rounded-md text-cream hover:bg-black/80 min-h-[44px] min-w-[44px] flex items-center justify-center">
                   &lt;
                 </button>
               )}
               {i < images.length - 1 && (
-                <button type="button" onClick={() => moveImage(i, 1)} className="p-1.5 bg-black/50 rounded-md text-white hover:bg-black/80 min-h-[44px] min-w-[44px] flex items-center justify-center">
+                <button type="button" onClick={() => moveImage(i, 1)} className="p-1.5 bg-black/50 rounded-md text-cream hover:bg-black/80 min-h-[44px] min-w-[44px] flex items-center justify-center">
                   &gt;
                 </button>
               )}
-              <button type="button" onClick={() => removeImage(i)} className="p-1.5 bg-sold/80 rounded-md text-white hover:bg-sold min-h-[44px] min-w-[44px] flex items-center justify-center">
+              <button type="button" onClick={() => removeImage(i)} className="p-1.5 bg-sold/80 rounded-md text-cream hover:bg-sold min-h-[44px] min-w-[44px] flex items-center justify-center">
                 <X className="w-5 h-5" />
               </button>
             </div>
-            {i === 0 && <div className="absolute bottom-2 left-2 px-2 py-1 bg-black/60 text-white text-[10px] rounded uppercase font-bold tracking-wider pointer-events-none">Cover</div>}
+            {i === 0 && <div className="absolute bottom-2 left-2 px-2 py-1 bg-black/60 text-cream text-[10px] rounded uppercase font-bold tracking-wider pointer-events-none">Cover</div>}
           </div>
         ))}
         
@@ -105,7 +105,7 @@ function compressImage(file, maxWidth, quality) {
         canvas.width = width;
         canvas.height = height;
         const ctx = canvas.getContext('2d');
-        ctx.fillStyle = '#FFFFFF';
+        ctx.fillStyle = '#F4F1EA';
         ctx.fillRect(0, 0, width, height);
         ctx.drawImage(img, 0, 0, width, height);
         
