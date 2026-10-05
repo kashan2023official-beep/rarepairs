@@ -84,7 +84,7 @@ exports.handler = async (event) => {
 
 Product: ${product.name}
 Size: UK ${product.size_uk}
-Price: ₹${product.price}
+Price: Rs ${product.price}
 
 Customer: ${validatedData.customer_name}
 Phone: ${validatedData.customer_phone}
@@ -112,7 +112,7 @@ Order ID: ${orderId}`;
               <p>We've received your order for the <strong>${product.name}</strong>.</p>
               <div style="background-color: #FFFFFF; padding: 20px; border-radius: 8px; margin: 24px 0;">
                 <p style="margin: 0;"><strong>Size:</strong> UK ${product.size_uk}</p>
-                <p style="margin: 8px 0 0 0;"><strong>Price:</strong> ₹${product.price}</p>
+                <p style="margin: 8px 0 0 0;"><strong>Price:</strong> Rs ${product.price}</p>
               </div>
               <p>We'll confirm with you on WhatsApp shortly to arrange payment and shipping.</p>
               <p>Thanks for giving this pair a second chance!</p>

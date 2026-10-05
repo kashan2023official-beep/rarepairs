@@ -36,7 +36,7 @@ export default function ProductCard({ id, name, slug, price, size_uk, condition,
           UK {size_uk} · {condition}
         </p>
         <p className="text-[13px] sm:text-[15px] font-bold mt-1 text-navy dark:text-cream">
-          {new Intl.NumberFormat('en-IN', { style: 'currency', currency: 'INR', maximumFractionDigits: 0 }).format(price)}
+          {new Intl.NumberFormat('en-PK', { style: 'currency', currency: 'PKR', maximumFractionDigits: 0 }).format(price)}
         </p>
       </div>
     </Link>

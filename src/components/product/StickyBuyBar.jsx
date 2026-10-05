@@ -10,7 +10,7 @@ export default function StickyBuyBar({ price, disabled, onBuy }) {
             : 'bg-navy text-cream hover:bg-navy/90 dark:bg-cream dark:text-navy dark:hover:bg-cream/90'
         }`}
       >
-        {disabled ? 'Sold Out' : `Buy on WhatsApp • ₹${price}`}
+        {disabled ? 'Sold Out' : `Buy on WhatsApp • Rs ${price}`}
       </button>
     </div>
   );

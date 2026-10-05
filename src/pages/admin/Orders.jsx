@@ -75,7 +75,7 @@ export default function Orders() {
                 </div>
                 
                 <div className="font-medium text-navy dark:text-cream hidden md:block">
-                  ₹{order.amount}
+                  Rs {order.amount}
                 </div>
                 
                 <div className="hidden md:block">
@@ -116,7 +116,7 @@ export default function Orders() {
                   <div>
                     <h4 className="text-xs font-bold uppercase tracking-wider text-navy/70 dark:text-cream/70 mb-3">Order Details</h4>
                     <div className="space-y-2 text-sm text-navy dark:text-cream mb-6">
-                      <p><span className="font-semibold w-20 inline-block">Amount:</span> ₹{order.amount}</p>
+                      <p><span className="font-semibold w-20 inline-block">Amount:</span> Rs {order.amount}</p>
                       <p><span className="font-semibold w-20 inline-block">Size:</span> UK {order.product?.size_uk}</p>
                       <p><span className="font-semibold w-20 inline-block">Notes:</span> {order.notes || 'None'}</p>
                       <div className="md:hidden mt-4">

@@ -79,11 +79,11 @@ export default function ProductDetail() {
           
           <div className="mt-4 flex items-baseline gap-4">
             <span className="text-2xl font-bold text-navy dark:text-cream">
-              {new Intl.NumberFormat('en-IN', { style: 'currency', currency: 'INR', maximumFractionDigits: 0 }).format(product.price)}
+              {new Intl.NumberFormat('en-PK', { style: 'currency', currency: 'PKR', maximumFractionDigits: 0 }).format(product.price)}
             </span>
             {product.compare_at_price && (
               <span className="text-lg line-through text-navy/60 dark:text-cream/60">
-                {new Intl.NumberFormat('en-IN', { style: 'currency', currency: 'INR', maximumFractionDigits: 0 }).format(product.compare_at_price)}
+                {new Intl.NumberFormat('en-PK', { style: 'currency', currency: 'PKR', maximumFractionDigits: 0 }).format(product.compare_at_price)}
               </span>
             )}
           </div>

@@ -139,11 +139,11 @@ export default function ProductForm() {
         {/* Pricing & Status */}
         <div className="bg-white dark:bg-navy-card p-6 rounded-xl border border-navy/10 dark:border-cream/10 grid grid-cols-1 md:grid-cols-2 gap-6">
           <div>
-            <label className="block text-xs font-bold uppercase text-navy/70 dark:text-cream/70 mb-2">Price (₹) *</label>
+            <label className="block text-xs font-bold uppercase text-navy/70 dark:text-cream/70 mb-2">Price (Rs) *</label>
             <input type="number" {...register('price', { required: true })} className="w-full bg-transparent border border-navy/20 dark:border-cream/20 rounded-lg px-4 py-3 min-h-[44px] text-navy dark:text-cream focus:ring-1 focus:ring-navy dark:focus:ring-cream outline-none" />
           </div>
           <div>
-            <label className="block text-xs font-bold uppercase text-navy/70 dark:text-cream/70 mb-2">Compare at Price (₹)</label>
+            <label className="block text-xs font-bold uppercase text-navy/70 dark:text-cream/70 mb-2">Compare at Price (Rs)</label>
             <input type="number" {...register('compare_at_price')} className="w-full bg-transparent border border-navy/20 dark:border-cream/20 rounded-lg px-4 py-3 min-h-[44px] text-navy dark:text-cream focus:ring-1 focus:ring-navy dark:focus:ring-cream outline-none" />
           </div>
           <div>

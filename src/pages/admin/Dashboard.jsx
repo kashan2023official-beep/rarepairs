@@ -111,7 +111,7 @@ export default function Dashboard() {
                     </td>
                     <td className="p-4 text-navy dark:text-cream">UK {p.size_uk}</td>
                     <td className="p-4 font-medium text-navy dark:text-cream">
-                      {new Intl.NumberFormat('en-IN', { style: 'currency', currency: 'INR', maximumFractionDigits: 0 }).format(p.price)}
+                      {new Intl.NumberFormat('en-PK', { style: 'currency', currency: 'PKR', maximumFractionDigits: 0 }).format(p.price)}
                     </td>
                     <td className="p-4">
                       <Badge type={p.status}>{p.status}</Badge>
@@ -149,7 +149,7 @@ export default function Dashboard() {
                 <img src={p.images?.[0] || 'https://placehold.co/100'} alt={p.name} className="w-20 h-20 rounded-lg object-contain bg-cream/50 dark:bg-navy/50"  loading="lazy" decoding="async"/>
                 <div className="flex-1 min-w-0">
                   <h3 className="font-semibold text-navy dark:text-cream truncate">{p.name}</h3>
-                  <p className="text-sm text-navy/60 dark:text-cream/60 mt-1">UK {p.size_uk} • ₹{p.price}</p>
+                  <p className="text-sm text-navy/60 dark:text-cream/60 mt-1">UK {p.size_uk} • Rs {p.price}</p>
                   <div className="mt-2"><Badge type={p.status}>{p.status}</Badge></div>
                 </div>
                 <div className="flex flex-col gap-2 justify-between">

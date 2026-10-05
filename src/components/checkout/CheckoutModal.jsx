@@ -7,7 +7,7 @@ import { X, CheckCircle2, Loader2, ArrowRight } from 'lucide-react';
 const checkoutSchema = z.object({
   customer_name: z.string().min(1, 'Name is required'),
   customer_email: z.string().email('Valid email is required'),
-  customer_phone: z.string().min(10, 'Phone must be at least 10 digits'),
+  customer_phone: z.string().regex(/^(\+92|0)?3\d{9}$/, 'Please enter a valid Pakistani phone number (+92 3XX XXXXXXX)'),
   customer_address: z.string().min(10, 'Address must be at least 10 characters'),
   notes: z.string().optional(),
 });
@@ -126,7 +126,7 @@ export default function CheckoutModal({ isOpen, onClose, product }) {
                   <h4 className="font-semibold text-navy dark:text-cream text-sm">{product.name}</h4>
                   <p className="text-xs text-navy/60 dark:text-cream/60 mt-1">UK {product.size_uk} • {product.condition}</p>
                   <p className="font-bold text-navy dark:text-cream mt-1">
-                    {new Intl.NumberFormat('en-IN', { style: 'currency', currency: 'INR', maximumFractionDigits: 0 }).format(product.price)}
+                    {new Intl.NumberFormat('en-PK', { style: 'currency', currency: 'PKR', maximumFractionDigits: 0 }).format(product.price)}
                   </p>
                 </div>
               </div>
@@ -159,7 +159,7 @@ export default function CheckoutModal({ isOpen, onClose, product }) {
                     type="tel"
                     {...register('customer_phone')}
                     className={`w-full bg-transparent border rounded-lg px-4 py-3 text-navy dark:text-cream focus:ring-1 outline-none transition-colors ${errors.customer_phone ? 'border-sold dark:border-sold-dark focus:ring-sold' : 'border-navy/20 dark:border-cream/20 focus:ring-navy dark:focus:ring-cream'}`}
-                    placeholder="91XXXXXXXXXX"
+                    placeholder="+92 3XX XXXXXXX"
                   />
                   {errors.customer_phone && <p className="text-sold dark:text-sold-dark text-xs mt-1">{errors.customer_phone.message}</p>}
                 </div>
@@ -170,7 +170,7 @@ export default function CheckoutModal({ isOpen, onClose, product }) {
                     {...register('customer_address')}
                     rows={2}
                     className={`w-full bg-transparent border rounded-lg px-4 py-3 text-navy dark:text-cream focus:ring-1 outline-none transition-colors resize-none ${errors.customer_address ? 'border-sold dark:border-sold-dark focus:ring-sold' : 'border-navy/20 dark:border-cream/20 focus:ring-navy dark:focus:ring-cream'}`}
-                    placeholder="Full address with pin code"
+                    placeholder="Full address with city / postal code"
                   />
                   {errors.customer_address && <p className="text-sold dark:text-sold-dark text-xs mt-1">{errors.customer_address.message}</p>}
                 </div>
