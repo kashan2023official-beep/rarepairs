@@ -133,8 +133,9 @@ export default function CheckoutModal({ isOpen, onClose, product }) {
 
               <form id="checkout-form" onSubmit={handleSubmit(onSubmit)} className="space-y-4">
                 <div>
-                  <label className="block text-xs font-bold uppercase tracking-wider text-navy/70 dark:text-cream/70 mb-1">Name *</label>
+                  <label htmlFor="customer_name" className="block text-xs font-bold uppercase tracking-wider text-navy/70 dark:text-cream/70 mb-1">Name *</label>
                   <input 
+                    id="customer_name"
                     {...register('customer_name')}
                     className={`w-full bg-transparent border rounded-lg px-4 py-3 text-navy dark:text-cream focus:ring-1 outline-none transition-colors ${errors.customer_name ? 'border-sold dark:border-sold-dark focus:ring-sold' : 'border-navy/20 dark:border-cream/20 focus:ring-navy dark:focus:ring-cream'}`}
                     placeholder="Jane Doe"
@@ -143,8 +144,9 @@ export default function CheckoutModal({ isOpen, onClose, product }) {
                 </div>
                 
                 <div>
-                  <label className="block text-xs font-bold uppercase tracking-wider text-navy/70 dark:text-cream/70 mb-1">Email *</label>
+                  <label htmlFor="customer_email" className="block text-xs font-bold uppercase tracking-wider text-navy/70 dark:text-cream/70 mb-1">Email *</label>
                   <input 
+                    id="customer_email"
                     type="email"
                     {...register('customer_email')}
                     className={`w-full bg-transparent border rounded-lg px-4 py-3 text-navy dark:text-cream focus:ring-1 outline-none transition-colors ${errors.customer_email ? 'border-sold dark:border-sold-dark focus:ring-sold' : 'border-navy/20 dark:border-cream/20 focus:ring-navy dark:focus:ring-cream'}`}
@@ -154,8 +156,9 @@ export default function CheckoutModal({ isOpen, onClose, product }) {
                 </div>
 
                 <div>
-                  <label className="block text-xs font-bold uppercase tracking-wider text-navy/70 dark:text-cream/70 mb-1">Phone *</label>
+                  <label htmlFor="customer_phone" className="block text-xs font-bold uppercase tracking-wider text-navy/70 dark:text-cream/70 mb-1">Phone *</label>
                   <input 
+                    id="customer_phone"
                     type="tel"
                     {...register('customer_phone')}
                     className={`w-full bg-transparent border rounded-lg px-4 py-3 text-navy dark:text-cream focus:ring-1 outline-none transition-colors ${errors.customer_phone ? 'border-sold dark:border-sold-dark focus:ring-sold' : 'border-navy/20 dark:border-cream/20 focus:ring-navy dark:focus:ring-cream'}`}
@@ -165,8 +168,9 @@ export default function CheckoutModal({ isOpen, onClose, product }) {
                 </div>
 
                 <div>
-                  <label className="block text-xs font-bold uppercase tracking-wider text-navy/70 dark:text-cream/70 mb-1">Shipping Address *</label>
+                  <label htmlFor="customer_address" className="block text-xs font-bold uppercase tracking-wider text-navy/70 dark:text-cream/70 mb-1">Shipping Address *</label>
                   <textarea 
+                    id="customer_address"
                     {...register('customer_address')}
                     rows={2}
                     className={`w-full bg-transparent border rounded-lg px-4 py-3 text-navy dark:text-cream focus:ring-1 outline-none transition-colors resize-none ${errors.customer_address ? 'border-sold dark:border-sold-dark focus:ring-sold' : 'border-navy/20 dark:border-cream/20 focus:ring-navy dark:focus:ring-cream'}`}
@@ -176,8 +180,9 @@ export default function CheckoutModal({ isOpen, onClose, product }) {
                 </div>
 
                 <div>
-                  <label className="block text-xs font-bold uppercase tracking-wider text-navy/70 dark:text-cream/70 mb-1">Notes (Optional)</label>
+                  <label htmlFor="notes" className="block text-xs font-bold uppercase tracking-wider text-navy/70 dark:text-cream/70 mb-1">Notes (Optional)</label>
                   <input 
+                    id="notes"
                     {...register('notes')}
                     className="w-full bg-transparent border border-navy/20 dark:border-cream/20 rounded-lg px-4 py-3 text-navy dark:text-cream focus:ring-1 focus:ring-navy dark:focus:ring-cream outline-none transition-colors"
                     placeholder="Any special instructions"

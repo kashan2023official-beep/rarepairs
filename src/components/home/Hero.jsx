@@ -1,5 +1,3 @@
-import { useState, useEffect } from 'react';
-import { motion, useReducedMotion } from 'framer-motion';
 import { ArrowRight } from 'lucide-react';
 
 // Pure CSS Mesh Gradients
@@ -21,28 +19,10 @@ const DARK_MESH_GRADIENT = [
 const NOISE_DATA_URI =
   "url(\"data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.8' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)'/%3E%3C/svg%3E\")";
 
-// Custom cubic-bezier easing for smooth levitation with zero abrupt turnarounds
-const FLOAT_EASING = [0.45, 0, 0.55, 1];
-
 export default function Hero() {
-  const shouldReduceMotion = useReducedMotion();
-  const [isEntranceComplete, setIsEntranceComplete] = useState(false);
-
-  useEffect(() => {
-    // Safety fallback in case onAnimationComplete has edge-case delays
-    const timer = setTimeout(() => {
-      setIsEntranceComplete(true);
-    }, 1250);
-    return () => clearTimeout(timer);
-  }, []);
-
   return (
-    <motion.section
-      initial={shouldReduceMotion ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
-      animate={{ opacity: 1, y: 0 }}
-      transition={{ duration: 1.2, ease: 'easeOut' }}
-      onAnimationComplete={() => setIsEntranceComplete(true)}
-      className="relative w-full overflow-hidden transition-colors duration-500 bg-[#F4F1EA] dark:bg-[#1A2B42]"
+    <section
+      className="relative w-full overflow-hidden transition-colors duration-500 bg-[#F4F1EA] dark:bg-[#1A2B42] animate-fade-in-up"
       aria-label="RarePairs Hero"
     >
       {/* Layered Mesh Gradient — Light Mode */}
@@ -115,84 +95,33 @@ export default function Hero() {
             {/* Sneaker Wrapper: ~75% on mobile (<768px), ~55% of hero on desktop */}
             <div className="relative w-[75%] sm:w-[65%] md:w-full max-w-[340px] sm:max-w-[420px] md:max-w-[560px] lg:max-w-[620px] mx-auto select-none">
               
-              {/* Layer 1: Vertical Float (7s loop, ease [0.45, 0, 0.55, 1]) */}
-              <motion.div
-                className="relative z-10 w-full"
-                initial={{ y: 0 }}
-                animate={
-                  isEntranceComplete && !shouldReduceMotion
-                    ? { y: [0, -14, 0] }
-                    : { y: 0 }
-                }
-                transition={
-                  isEntranceComplete && !shouldReduceMotion
-                    ? {
-                        duration: 7,
-                        ease: FLOAT_EASING,
-                        repeat: Infinity,
-                        repeatType: 'loop',
-                      }
-                    : { duration: 0 }
-                }
+              {/* Layer 1 & 2: Vertical Float + Organic Micro-tilt */}
+              <div 
+                className="relative z-10 w-full animate-hero-float origin-center flex items-center justify-center"
+                style={{ transform: 'rotate(-8deg)' }}
               >
-                {/* Layer 2: Organic Micro-tilt (9s loop, -8deg to -6.5deg swing) */}
-                <motion.div
-                  className="w-full origin-center flex items-center justify-center"
-                  initial={{ rotate: -8 }}
-                  animate={
-                    isEntranceComplete && !shouldReduceMotion
-                      ? { rotate: [-8, -6.5, -8] }
-                      : { rotate: -8 }
-                  }
-                  transition={
-                    isEntranceComplete && !shouldReduceMotion
-                      ? {
-                          duration: 9,
-                          ease: FLOAT_EASING,
-                          repeat: Infinity,
-                          repeatType: 'loop',
-                        }
-                      : { duration: 0 }
-                  }
-                >
-                  <img
-                    src="/hero/sneaker.png"
-                    alt="Floating white sneaker archive piece"
-                    width={4000}
-                    height={4000}
-                    className="w-full h-auto object-contain pointer-events-none drop-shadow-sm"
-                    loading="eager"
-                    fetchPriority="high"
-                    decoding="async"
-                  />
-                </motion.div>
-              </motion.div>
+                <img
+                  src="/hero/sneaker.webp"
+                  srcSet="/hero/sneaker.webp 1x, /hero/sneaker@2x.webp 2x"
+                  alt="Floating white sneaker archive piece"
+                  width={4000}
+                  height={4000}
+                  className="w-full h-auto object-contain pointer-events-none drop-shadow-sm"
+                  loading="eager"
+                  fetchPriority="high"
+                  decoding="async"
+                />
+              </div>
 
-              {/* Layer 3: Synchronized Levitating Soft Shadow (7s loop, matches float phase) */}
-              {/* Placed ~40px below the sneaker's bottom edge (sneaker pixels end at 71.7% height) */}
-              <motion.div
-                className="absolute left-1/2 -translate-x-1/2 pointer-events-none z-0"
+              {/* Layer 3: Synchronized Levitating Soft Shadow */}
+              <div
+                className="absolute left-1/2 pointer-events-none z-0 animate-hero-shadow"
                 style={{
                   top: '78%',
                   width: '64%',
                   height: '32px',
+                  transform: 'translateX(-50%)',
                 }}
-                initial={{ scale: 1, opacity: 1 }}
-                animate={
-                  isEntranceComplete && !shouldReduceMotion
-                    ? { scale: [1, 0.75, 1], opacity: [1, 0.5, 1] }
-                    : { scale: 1, opacity: 1 }
-                }
-                transition={
-                  isEntranceComplete && !shouldReduceMotion
-                    ? {
-                        duration: 7,
-                        ease: FLOAT_EASING,
-                        repeat: Infinity,
-                        repeatType: 'loop',
-                      }
-                    : { duration: 0 }
-                }
               >
                 {/* Light Mode Shadow: radial-gradient ellipse with navy tint */}
                 <div
@@ -213,13 +142,13 @@ export default function Hero() {
                   }}
                   aria-hidden="true"
                 />
-              </motion.div>
+              </div>
 
             </div>
           </div>
 
         </div>
       </div>
-    </motion.section>
+    </section>
   );
 }

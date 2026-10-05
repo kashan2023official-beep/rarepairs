@@ -29,9 +29,9 @@ export default function ProductCard({ id, name, slug, price, size_uk, condition,
       </div>
 
       <div className="mt-3 px-1">
-        <h3 className="text-[13px] sm:text-[15px] font-semibold leading-snug text-navy dark:text-cream truncate">
+        <h2 className="text-[13px] sm:text-[15px] font-semibold leading-snug text-navy dark:text-cream truncate">
           {name}
-        </h3>
+        </h2>
         <p className="text-xs sm:text-[12px] mt-1 text-navy/60 dark:text-cream/60">
           UK {size_uk} · {condition}
         </p>

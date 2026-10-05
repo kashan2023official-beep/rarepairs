@@ -70,7 +70,9 @@ export default function ProductFilters() {
 
       <div className="flex flex-wrap gap-3 items-center">
         {/* Condition Dropdown */}
+        <label htmlFor="condition-select" className="sr-only">Condition</label>
         <select 
+          id="condition-select"
           value={activeCondition} 
           onChange={(e) => updateParam('condition', e.target.value)}
           className="bg-transparent text-sm text-navy dark:text-cream border border-navy/10 dark:border-cream/10 rounded-md py-1.5 pl-3 pr-8 focus:ring-1 focus:ring-navy dark:focus:ring-cream outline-none cursor-pointer"
@@ -89,7 +91,7 @@ export default function ProductFilters() {
               className={`px-3 py-1 text-xs font-medium rounded-sm transition-colors ${
                 (activeStatus === status || (activeStatus === 'Available' && !searchParams.has('status') && status === 'Available'))
                   ? 'bg-navy/5 dark:bg-cream/5 text-navy dark:text-cream' 
-                  : 'text-navy/50 dark:text-cream/50 hover:text-navy dark:hover:text-cream'
+                  : 'text-navy/70 dark:text-cream/70 hover:text-navy dark:hover:text-cream'
               }`}
             >
               {status}
@@ -98,7 +100,9 @@ export default function ProductFilters() {
         </div>
 
         {/* Sort Dropdown */}
+        <label htmlFor="sort-select" className="sr-only">Sort by</label>
         <select 
+          id="sort-select"
           value={activeSort} 
           onChange={(e) => updateParam('sort', e.target.value)}
           className="bg-transparent text-sm text-navy dark:text-cream border border-navy/10 dark:border-cream/10 rounded-md py-1.5 pl-3 pr-8 focus:ring-1 focus:ring-navy dark:focus:ring-cream outline-none cursor-pointer"

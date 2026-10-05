@@ -34,7 +34,7 @@ export default function Footer() {
           </div>
         </div>
         <div className="mt-12 pt-8 border-t border-cream/10 dark:border-navy/10">
-          <p className="text-xs text-center text-cream/60 dark:text-navy/60">
+          <p className="text-xs text-center text-cream/70 dark:text-navy/70">
             &copy; {new Date().getFullYear()} RarePairs. All rights reserved.
           </p>
         </div>
