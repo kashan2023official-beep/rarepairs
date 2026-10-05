@@ -1,7 +1,5 @@
 import { Link } from 'react-router-dom';
 import ThemeToggle from '../ui/ThemeToggle';
-import { Search, ShoppingBag } from 'lucide-react';
-
 export default function Header() {
   return (
     <header className="sticky top-0 z-40 w-full bg-cream/92 dark:bg-navy/92 backdrop-blur-sm border-b border-navy/10 dark:border-cream/10">
@@ -16,13 +14,8 @@ export default function Header() {
             <Link to="/" className="text-sm font-medium text-navy dark:text-cream hover:opacity-70 transition-opacity">Shop</Link>
             <Link to="/" className="text-sm font-medium text-navy dark:text-cream hover:opacity-70 transition-opacity">About</Link>
           </nav>
-          <div className="flex items-center space-x-2">
-            <button aria-label="Search"  className="p-2 text-navy dark:text-cream hover:bg-navy/5 dark:hover:bg-cream/5 rounded-full transition-colors" aria-label="Search"><Search className="w-5 h-5" />
-            </button>
+          <div className="flex items-center">
             <ThemeToggle />
-            <button className="p-2 text-navy dark:text-cream hover:bg-navy/5 dark:hover:bg-cream/5 rounded-full transition-colors" aria-label="Cart">
-              <ShoppingBag className="w-5 h-5" />
-            </button>
           </div>
         </div>
       </div>
