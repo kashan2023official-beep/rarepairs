@@ -1,21 +1,14 @@
-import { useState, useEffect } from 'react';
+import { useState } from 'react';
 import { X } from 'lucide-react';
 
 export default function Announcement() {
-  const [isVisible, setIsVisible] = useState(false);
-  const [isClosing, setIsClosing] = useState(false);
-
-  useEffect(() => {
+  const [isVisible, setIsVisible] = useState(() => {
+    if (typeof window === 'undefined') return false;
     const dismissedUntil = localStorage.getItem('announcement_dismissed_until');
-    if (!dismissedUntil) {
-      setIsVisible(true);
-    } else {
-      const now = new Date().getTime();
-      if (now > parseInt(dismissedUntil, 10)) {
-        setIsVisible(true);
-      }
-    }
-  }, []);
+    if (!dismissedUntil) return true;
+    return Date.now() > parseInt(dismissedUntil, 10);
+  });
+  const [isClosing, setIsClosing] = useState(false);
 
   if (!isVisible && !isClosing) return null;
 
