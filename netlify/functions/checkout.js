@@ -1,13 +1,19 @@
 import { createClient } from '@supabase/supabase-js';
 import { z } from 'zod';
-import { Resend } from 'resend';
+import nodemailer from 'nodemailer';
 
 const supabase = createClient(
   process.env.VITE_SUPABASE_URL,
   process.env.SUPABASE_SERVICE_ROLE_KEY
 );
 
-const resend = new Resend(process.env.RESEND_API_KEY);
+const transporter = nodemailer.createTransport({
+  service: 'gmail',
+  auth: {
+    user: process.env.GMAIL_USER,
+    pass: process.env.GMAIL_APP_PASSWORD
+  }
+});
 
 const checkoutSchema = z.object({
   product_id: z.string().uuid(),
@@ -96,11 +102,11 @@ Order ID: ${orderId}`;
 
     const whatsapp_url = `https://wa.me/${adminPhone}?text=${encodeURIComponent(message)}`;
 
-    // Send email via Resend
+    // Send email via Nodemailer
     try {
-      if (process.env.RESEND_API_KEY && process.env.RESEND_API_KEY !== 'leave_blank_for_now') {
-        await resend.emails.send({
-          from: process.env.FROM_EMAIL || 'orders@rarepairs.com',
+      if (process.env.GMAIL_USER && process.env.GMAIL_APP_PASSWORD) {
+        await transporter.sendMail({
+          from: `"RarePairs" <${process.env.GMAIL_USER}>`,
           to: validatedData.customer_email,
           bcc: process.env.ADMIN_EMAIL || 'admin@rarepairs.com',
           subject: `Your RarePairs order — ${product.name}`,
@@ -123,7 +129,7 @@ Order ID: ${orderId}`;
         });
       }
     } catch (emailError) {
-      console.error('Failed to send email via Resend:', emailError);
+      console.error('Failed to send email via Nodemailer:', emailError);
     }
 
     return {
