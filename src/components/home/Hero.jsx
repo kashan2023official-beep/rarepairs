@@ -82,7 +82,7 @@ export default function Hero() {
               </a>
 
               <a
-                href="#how-it-works"
+                href="how-it-works"
                 className="text-sm font-medium text-navy/70 hover:text-navy dark:text-cream/70 dark:hover:text-cream transition-colors py-2 px-3"
               >
                 How we authenticate →
