@@ -57,7 +57,7 @@ export default function Login() {
                 type="email"
                 {...register('email')}
                 className={`w-full bg-transparent border rounded-lg px-4 py-3 text-navy dark:text-cream focus:ring-1 outline-none transition-colors ${errors.email ? 'border-sold dark:border-sold-dark focus:ring-sold' : 'border-navy/20 dark:border-cream/20 focus:ring-navy dark:focus:ring-cream'}`}
-                placeholder="admin@rarepais.com"
+                placeholder="admin@rarepairs.com"
               />
               {errors.email && <p className="text-sold dark:text-sold-dark text-xs mt-1">{errors.email.message}</p>}
             </div>

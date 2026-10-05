@@ -46,7 +46,7 @@ create policy "Public read products"
 
 create policy "Admin write products"
   on products for all
-  using (auth.jwt() ->> 'email' = 'admin@rarepais.com');
+  using (auth.jwt() ->> 'email' = 'admin@rarepairs.com');
 
 alter table orders enable row level security;
 
@@ -56,4 +56,4 @@ create policy "Anyone can create an order"
 
 create policy "Admin reads orders"
   on orders for select
-  using (auth.jwt() ->> 'email' = 'admin@rarepais.com');
+  using (auth.jwt() ->> 'email' = 'admin@rarepairs.com');

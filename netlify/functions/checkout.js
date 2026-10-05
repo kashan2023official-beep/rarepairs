@@ -105,10 +105,9 @@ Order ID: ${orderId}`;
     // Send email via Nodemailer
     try {
       if (process.env.GMAIL_USER && process.env.GMAIL_APP_PASSWORD) {
-        await transporter.sendMail({
+        const mailOptions = {
           from: `"RarePairs" <${process.env.GMAIL_USER}>`,
           to: validatedData.customer_email,
-          bcc: process.env.ADMIN_EMAIL || 'admin@rarepairs.com',
           subject: `Your RarePairs order — ${product.name}`,
           html: `
             <div style="font-family: 'Inter', sans-serif; background-color: #F4F1EA; color: #1A2B42; padding: 40px 20px; max-width: 600px; margin: 0 auto; border-radius: 8px;">
@@ -126,7 +125,13 @@ Order ID: ${orderId}`;
               <p style="font-size: 12px; opacity: 0.7;">Order ID: ${orderId}</p>
             </div>
           `
-        });
+        };
+        
+        if (process.env.ADMIN_EMAIL && process.env.ADMIN_EMAIL.includes('@')) {
+          mailOptions.bcc = process.env.ADMIN_EMAIL;
+        }
+
+        await transporter.sendMail(mailOptions);
       }
     } catch (emailError) {
       console.error('Failed to send email via Nodemailer:', emailError);
