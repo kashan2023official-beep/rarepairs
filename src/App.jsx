@@ -5,6 +5,7 @@ import { ThemeProvider } from './context/ThemeContext';
 import Layout from './components/layout/Layout';
 import Home from './pages/Home';
 import ProductDetail from './pages/ProductDetail';
+import HowItWorks from './pages/HowItWorks';
 import RequireAuth from './components/auth/RequireAuth';
 import NotFound from './pages/NotFound';
 import { Loader2 } from 'lucide-react';
@@ -31,6 +32,7 @@ function App() {
             <Route path="/" element={<Layout />}>
               <Route index element={<Home />} />
               <Route path="product/:slug" element={<ProductDetail />} />
+              <Route path="how-it-works" element={<HowItWorks />} />
               
               <Route path="admin/login" element={<Suspense fallback={<AdminLoader />}><Login /></Suspense>} />
               <Route element={<RequireAuth />}>

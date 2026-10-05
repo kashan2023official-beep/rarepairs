@@ -12,6 +12,7 @@ export default function Header() {
           </div>
           <nav className="hidden md:flex space-x-8">
             <Link to="/" className="text-sm font-medium text-navy dark:text-cream hover:opacity-70 transition-opacity">Shop</Link>
+            <Link to="/how-it-works" className="text-sm font-medium text-navy dark:text-cream hover:opacity-70 transition-opacity">How It Works</Link>
             <Link to="/" className="text-sm font-medium text-navy dark:text-cream hover:opacity-70 transition-opacity">About</Link>
           </nav>
           <div className="flex items-center">

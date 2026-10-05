@@ -1,3 +1,5 @@
+import { Link } from 'react-router-dom';
+
 export default function Footer() {
   return (
     <footer className="bg-navy dark:bg-cream py-12 mt-auto">
@@ -20,8 +22,8 @@ export default function Footer() {
           <div>
             <h3 className="text-sm font-semibold text-cream dark:text-navy uppercase tracking-wider">Support</h3>
             <ul className="mt-4 space-y-2">
+              <li><Link to="/how-it-works" className="text-sm text-cream/70 dark:text-navy/70 hover:text-cream dark:hover:text-navy transition-colors">How It Works</Link></li>
               <li><a href="#" className="text-sm text-cream/70 dark:text-navy/70 hover:text-cream dark:hover:text-navy transition-colors">FAQ</a></li>
-              <li><a href="#" className="text-sm text-cream/70 dark:text-navy/70 hover:text-cream dark:hover:text-navy transition-colors">Size Guide</a></li>
               <li><a href="#" className="text-sm text-cream/70 dark:text-navy/70 hover:text-cream dark:hover:text-navy transition-colors">Contact</a></li>
             </ul>
           </div>

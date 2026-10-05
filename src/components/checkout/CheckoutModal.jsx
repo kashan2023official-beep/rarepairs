@@ -2,7 +2,7 @@ import { useState, useEffect } from 'react';
 import { useForm } from 'react-hook-form';
 import { zodResolver } from '@hookform/resolvers/zod';
 import { z } from 'zod';
-import { X, CheckCircle2, Loader2, ArrowRight } from 'lucide-react';
+import { X, CheckCircle2, Loader2, ArrowRight, Info } from 'lucide-react';
 
 const checkoutSchema = z.object({
   customer_name: z.string().min(1, 'Name is required'),
@@ -195,6 +195,10 @@ export default function CheckoutModal({ isOpen, onClose, product }) {
 
         {status === 'idle' && (
           <div className="p-5 md:p-6 border-t border-navy/10 dark:border-cream/10 bg-navy/5 dark:bg-cream/5 shrink-0">
+            <p className="text-xs text-navy/60 dark:text-cream/60 text-center mt-3 mb-2">
+              <Info className="w-3 h-3 inline-block mr-1" />
+              Cash on Delivery orders require a Rs 500 advance deposit — adjusted against your final total.
+            </p>
             <button 
               type="submit"
               form="checkout-form"
